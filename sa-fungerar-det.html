@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Så fungerar skyltprogram.se — USB-sticka, ladda ner & skriv ut prisskyltar</title>
+  <meta name="description" content="Så fungerar skyltprogram.se: du får en USB-sticka, laddar ner programmet, ansluter en skrivare och skapar professionella prisskyltar på sekunder. Ingen teknisk kunskap krävs." />
+  <link rel="canonical" href="https://skyltprogram.se/sa-fungerar-det.html" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "skyltprogram.se",
+    "operatingSystem": "Windows, macOS",
+    "applicationCategory": "BusinessApplication",
+    "description": "Program för att skapa professionella prisskyltar och butiksskyltar. Levereras via USB-sticka, installeras på datorn och skriver ut via vanlig skrivare.",
+    "offers": { "@type": "Offer", "seller": { "@type": "Organization", "name": "Tax om Prismärkningssystem AB" } }
+  }
+  </script>
+
+  <script>
+    tailwind.config = {
+      theme: { extend: { fontFamily: { display: ['"DM Serif Display"', 'serif'], body: ['Inter', 'sans-serif'] } } }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { background: #0D0D0D; color: #ffffff; font-family: 'Inter', sans-serif; margin: 0; }
+    body::before {
+      content: ''; position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: 0.35;
+    }
+    .hero-bg {
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 0%, rgba(204,10,10,0.15) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(245,197,24,0.05) 0%, transparent 60%),
+        #0D0D0D;
+    }
+    .card-base     { background: #161616; border: 1px solid #252525; border-radius: 16px; }
+    .card-elevated { background: #1C1C1C; border: 1px solid #2E2E2E; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.6); }
+    .btn-primary {
+      background: #1a7a2e; color: #fff; font-weight: 700; border-radius: 10px;
+      padding: 14px 28px; font-size: 15px; letter-spacing: -0.01em;
+      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.18s ease, background 0.15s ease;
+      box-shadow: 0 4px 16px rgba(26,122,46,0.45), 0 1px 4px rgba(26,122,46,0.3);
+      display: inline-flex; align-items: center; gap: 8px;
+      cursor: pointer; border: none; text-decoration: none;
+    }
+    .btn-primary:hover { background: #156325; transform: translateY(-2px); box-shadow: 0 8px 28px rgba(26,122,46,0.55); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #F5C518; outline-offset: 3px; }
+    .nav-link { color: #777; font-size: 14px; font-weight: 500; transition: color 0.15s ease; text-decoration: none; }
+    .nav-link:hover { color: #fff; }
+    .nav-link.active { color: #fff; }
+    .sp-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: #F5C518; color: #0D0D0D; font-weight: 900; font-size: 15px;
+      width: 32px; height: 32px; border-radius: 7px; letter-spacing: -0.03em; flex-shrink: 0;
+    }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(204,10,10,0.12); border: 1px solid rgba(204,10,10,0.3);
+      color: #F87171; font-size: 12px; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 100px;
+    }
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%; background: #CC0A0A; color: #fff;
+      font-weight: 900; font-size: 22px; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(204,10,10,0.5); flex-shrink: 0;
+    }
+    .divider { border: none; border-top: 1px solid #222; }
+    .faq-item { border-bottom: 1px solid #1e1e1e; }
+    .faq-item:last-child { border-bottom: none; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up   { animation: fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+    .fade-up-2 { animation: fadeUp 0.7s 0.1s cubic-bezier(0.22,1,0.36,1) both; }
+    @media (max-width: 767px) { .mobile-hide { display: none !important; } }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header style="position:sticky;top:0;z-index:50;background:rgba(13,13,13,0.88);backdrop-filter:blur(16px);border-bottom:1px solid #222;">
+  <nav style="max-width:1100px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;">
+    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+      <span class="sp-badge">SP</span>
+      <span style="font-weight:800;font-size:16px;letter-spacing:-0.03em;color:#fff;">skyltprogram<span style="color:#444;">.se</span></span>
+    </a>
+    <div class="mobile-hide" style="display:flex;align-items:center;gap:32px;">
+      <a href="index.html#problem" class="nav-link">Skyltprogram</a>
+      <a href="branscher.html" class="nav-link">Branscher</a>
+      <a href="om-oss.html" class="nav-link">Om oss</a>
+      <a href="kontakt.html" class="nav-link">Kontakt</a>
+    </div>
+    <a href="tel:0708309300" class="btn-primary" style="padding:10px 20px;font-size:14px;">
+      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.58-1.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      0708-30 93 00
+    </a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero-bg" style="max-width:1100px;margin:0 auto;padding:80px 24px 64px;">
+  <div class="fade-up" style="max-width:680px;">
+    <div class="pill" style="margin-bottom:24px;">Enkel installation</div>
+    <h1 class="font-display" style="font-size:clamp(36px,5vw,62px);line-height:1.05;letter-spacing:-0.04em;color:#fff;margin:0 0 24px;">
+      Så fungerar<br/><span style="color:#CC0A0A;">skyltprogram.se</span>
+    </h1>
+    <p class="fade-up-2" style="font-size:18px;color:#666;line-height:1.75;max-width:560px;margin:0;">
+      Du får en USB-sticka med programmet. Koppla in den, ladda ner, anslut din skrivare — och du kan skapa professionella prisskyltar direkt. Ingen teknisk kunskap krävs.
+    </p>
+  </div>
+</section>
+
+<div style="max-width:1100px;margin:0 auto;padding:0 24px;"><hr class="divider" /></div>
+
+<!-- STEG -->
+<section style="max-width:1100px;margin:0 auto;padding:72px 24px;">
+  <h2 class="font-display" style="font-size:clamp(26px,3.5vw,42px);letter-spacing:-0.04em;color:#fff;margin:0 0 56px;text-align:center;">
+    Tre steg till din första skylt
+  </h2>
+
+  <div style="display:flex;flex-direction:column;gap:0;">
+
+    <!-- Steg 1 -->
+    <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;padding:40px 0;border-bottom:1px solid #1a1a1a;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div class="step-num">1</div>
+        <div style="width:2px;height:calc(100% - 56px);background:linear-gradient(to bottom,rgba(204,10,10,0.4),transparent);margin-top:12px;min-height:60px;"></div>
+      </div>
+      <div style="padding-top:12px;">
+        <h3 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:-0.03em;">Du får en USB-sticka</h3>
+        <p style="font-size:16px;color:#666;line-height:1.8;margin:0 0 16px;">
+          Efter köpet skickar vi en USB-sticka med skyltprogram.se installerat. Ingen nedladdning från internet, inget krångel med licenser — allt finns på stickan.
+        </p>
+        <div class="card-base" style="padding:16px 20px;display:inline-flex;align-items:center;gap:12px;">
+          <svg width="20" height="20" fill="none" stroke="#F5C518" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/></svg>
+          <span style="font-size:14px;color:#888;">Levereras med post direkt till din butik</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steg 2 -->
+    <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;padding:40px 0;border-bottom:1px solid #1a1a1a;">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div class="step-num">2</div>
+        <div style="width:2px;height:calc(100% - 56px);background:linear-gradient(to bottom,rgba(204,10,10,0.4),transparent);margin-top:12px;min-height:60px;"></div>
+      </div>
+      <div style="padding-top:12px;">
+        <h3 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:-0.03em;">Koppla till datorn och ladda ner</h3>
+        <p style="font-size:16px;color:#666;line-height:1.8;margin:0 0 16px;">
+          Koppla USB-stickan till din Windows-dator eller Mac. Kör installationsfilen och följ de enkla stegen. Hela installationen tar under 5 minuter.
+        </p>
+        <div class="card-base" style="padding:16px 20px;display:inline-flex;align-items:center;gap:12px;">
+          <svg width="20" height="20" fill="none" stroke="#F5C518" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+          <span style="font-size:14px;color:#888;">Fungerar med Windows och Mac</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steg 3 -->
+    <div style="display:grid;grid-template-columns:80px 1fr;gap:32px;align-items:start;padding:40px 0;">
+      <div>
+        <div class="step-num">3</div>
+      </div>
+      <div style="padding-top:12px;">
+        <h3 style="font-size:22px;font-weight:800;color:#fff;margin:0 0 12px;letter-spacing:-0.03em;">Anslut skrivaren och skriv ut</h3>
+        <p style="font-size:16px;color:#666;line-height:1.8;margin:0 0 16px;">
+          Anslut en vanlig skrivare, fyll i produktnamn och pris i programmet — och klicka skriv ut. Din professionella prisskylt är klar på sekunder. Ingen specialutrustning behövs.
+        </p>
+        <div class="card-base" style="padding:16px 20px;display:inline-flex;align-items:center;gap:12px;">
+          <svg width="20" height="20" fill="none" stroke="#F5C518" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+          <span style="font-size:14px;color:#888;">Fungerar med alla vanliga skrivare</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICE BANNER -->
+<section style="background:#111;border-top:1px solid #1a1a1a;border-bottom:1px solid #1a1a1a;">
+  <div style="max-width:1100px;margin:0 auto;padding:56px 24px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div class="pill" style="margin-bottom:16px;">Service ingår</div>
+        <h2 class="font-display" style="font-size:clamp(24px,3vw,38px);letter-spacing:-0.04em;color:#fff;margin:0 0 16px;">
+          Vi hjälper dig att komma igång
+        </h2>
+        <p style="font-size:16px;color:#666;line-height:1.8;margin:0;">
+          Behöver du hjälp med installationen? Vår servicepersonal hjälper dig steg för steg — via telefon, mejl eller på plats. Vi ser till att allt fungerar innan vi är klara.
+        </p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#1a7a2e;flex-shrink:0;"></div>
+          <span style="font-size:15px;color:#888;">Support via telefon på svenska</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#1a7a2e;flex-shrink:0;"></div>
+          <span style="font-size:15px;color:#888;">Hjälp med installation och uppstart</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#1a7a2e;flex-shrink:0;"></div>
+          <span style="font-size:15px;color:#888;">Löpande service vid behov</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:14px;">
+          <div style="width:8px;height:8px;border-radius:50%;background:#1a7a2e;flex-shrink:0;"></div>
+          <span style="font-size:15px;color:#888;">Svar inom 1 arbetsdag på mejl</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="max-width:1100px;margin:0 auto;padding:72px 24px 80px;">
+  <h2 class="font-display" style="font-size:clamp(26px,3.5vw,42px);letter-spacing:-0.04em;color:#fff;margin:0 0 40px;">
+    Vanliga frågor
+  </h2>
+  <div>
+    <div class="faq-item" style="padding:28px 0;">
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-0.02em;">Behöver jag teknisk kunskap för att installera programmet?</h3>
+      <p style="font-size:15px;color:#666;line-height:1.75;margin:0;">Nej. Installationen är enkel och tar under 5 minuter. Koppla in USB-stickan, kör filen och följ stegen. Behöver du hjälp finns vår service tillgänglig.</p>
+    </div>
+    <div class="faq-item" style="padding:28px 0;">
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-0.02em;">Vilken skrivare fungerar med skyltprogram.se?</h3>
+      <p style="font-size:15px;color:#666;line-height:1.75;margin:0;">Programmet fungerar med de flesta vanliga skrivare — laser eller bläckstråle. Ingen specialskrivare krävs. Kontakta oss om du är osäker på din modell.</p>
+    </div>
+    <div class="faq-item" style="padding:28px 0;">
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-0.02em;">Kan jag använda programmet på flera datorer?</h3>
+      <p style="font-size:15px;color:#666;line-height:1.75;margin:0;">Kontakta oss för information om licenser och användning på flera enheter. Vi anpassar lösningen efter din butiks behov.</p>
+    </div>
+    <div class="faq-item" style="padding:28px 0;">
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-0.02em;">Hur snabbt levereras USB-stickan?</h3>
+      <p style="font-size:15px;color:#666;line-height:1.75;margin:0;">Vi skickar USB-stickan inom 1–2 arbetsdagar efter köpet med postleverans till din butik.</p>
+    </div>
+    <div class="faq-item" style="padding:28px 0;">
+      <h3 style="font-size:17px;font-weight:700;color:#fff;margin:0 0 10px;letter-spacing:-0.02em;">Vad händer om något inte fungerar?</h3>
+      <p style="font-size:15px;color:#666;line-height:1.75;margin:0;">Ring oss på <a href="tel:+46708309300" style="color:#CC0A0A;text-decoration:none;">0708-30 93 00</a> eller mejla <a href="mailto:taxom.se@gmail.com" style="color:#CC0A0A;text-decoration:none;">taxom.se@gmail.com</a>. Vår service hjälper dig att lösa problemet snabbt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,#CC0A0A 0%,#7A0505 100%);position:relative;overflow:hidden;">
+  <div style="position:absolute;right:-80px;top:-80px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,0.06);pointer-events:none;"></div>
+  <div style="max-width:1100px;margin:0 auto;padding:80px 24px;text-align:center;position:relative;z-index:1;">
+    <h2 class="font-display" style="font-size:clamp(28px,4vw,52px);letter-spacing:-0.04em;line-height:1.1;color:#fff;margin:0 0 16px;">Redo att komma igång?</h2>
+    <p style="font-size:18px;color:rgba(255,255,255,0.6);line-height:1.6;margin:0 0 36px;max-width:440px;margin-left:auto;margin-right:auto;">Kontakta oss så skickar vi en USB-sticka och hjälper dig med installationen.</p>
+    <a href="kontakt.html" style="display:inline-flex;align-items:center;gap:10px;background:#1a7a2e;color:#fff;font-weight:800;font-size:16px;padding:16px 36px;border-radius:12px;text-decoration:none;letter-spacing:-0.02em;transition:transform 0.18s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.18s ease;box-shadow:0 4px 24px rgba(26,122,46,0.45);"
+      onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 12px 36px rgba(26,122,46,0.6)'"
+      onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 24px rgba(26,122,46,0.45)'">Kontakta oss</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#080808;border-top:1px solid #161616;">
+  <div style="max-width:1100px;margin:0 auto;padding:56px 24px 32px;">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;">
+      <div>
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:10px;text-decoration:none;margin-bottom:16px;">
+          <span class="sp-badge">SP</span>
+          <span style="font-weight:800;font-size:15px;letter-spacing:-0.03em;color:#fff;">skyltprogram<span style="color:#333;">.se</span></span>
+        </a>
+        <p style="font-size:14px;color:#2A2A2A;line-height:1.7;max-width:240px;margin:0;">Professionella butiksskyltar och prisskyltar för svenska livsmedelsbutiker.</p>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2A2A2A;margin:0 0 14px;">Produkt</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0;">
+          <li><a href="sa-fungerar-det.html" class="nav-link" style="font-size:14px;">Så fungerar det</a></li>
+          <li><a href="branscher.html" class="nav-link" style="font-size:14px;">Branscher</a></li>
+          <li><a href="kontakt.html" class="nav-link" style="font-size:14px;">Köp nu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2A2A2A;margin:0 0 14px;">Företag</h4>
+        <ul style="display:flex;flex-direction:column;gap:10px;list-style:none;padding:0;margin:0;">
+          <li><a href="om-oss.html" class="nav-link" style="font-size:14px;">Om oss</a></li>
+          <li><a href="kontakt.html" class="nav-link" style="font-size:14px;">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#2A2A2A;margin:0 0 14px;">Kontaktuppgifter</h4>
+        <p style="font-size:14px;font-weight:700;color:#555;margin:0 0 10px;">Tax om Prismärkningssystem AB</p>
+        <p style="font-size:13px;color:#333;line-height:1.7;margin:0 0 14px;">Ängsullsvägen 30<br/>162 46 Vällingby</p>
+        <ul style="display:flex;flex-direction:column;gap:8px;list-style:none;padding:0;margin:0;">
+          <li><a href="mailto:taxom.se@gmail.com" style="font-size:13px;color:#444;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#444'">taxom.se@gmail.com</a></li>
+          <li><a href="tel:+46708309300" style="font-size:13px;color:#444;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#444'">+46 70 830 93 00</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="divider" />
+    <div style="display:flex;align-items:center;justify-content:space-between;padding-top:24px;">
+      <p style="font-size:13px;color:#2A2A2A;margin:0;">© 2026 Tax om Prismärkningssystem AB — Alla rättigheter förbehållna</p>
+      <p style="font-size:13px;color:#2A2A2A;margin:0;">Webb och <a href="https://mrdigital.se/" target="_blank" rel="noopener" style="color:#2A2A2A;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#2A2A2A'">SEO</a> av <a href="https://mrdigital.se/" target="_blank" rel="noopener" style="color:#2A2A2A;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#2A2A2A'">Mr Digital</a></p>
+      <p style="font-size:13px;color:#1E1E1E;margin:0;">Tillverkad med kärlek i Sverige</p>
+    </div>
+  </div>
+</footer>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:9999;width:min(600px,calc(100vw - 48px));background:#161616;border:1px solid #2a2a2a;border-radius:16px;padding:28px 32px;box-shadow:0 24px 64px rgba(0,0,0,0.85),0 4px 16px rgba(0,0,0,0.5);">
+  <h4 style="font-size:15px;font-weight:700;color:#fff;margin:0 0 8px;letter-spacing:-0.02em;">Vi använder cookies</h4>
+  <p style="font-size:13px;color:#666;line-height:1.7;margin:0 0 20px;">Vi använder både egna cookies och tredjepartscookies på skyltprogram.se. Cookies används till nödvändiga funktioner, bättre användarupplevelse, statistik och marknadsföring.</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+    <button onclick="acceptCookies()" style="background:#1a7a2e;color:#fff;font-weight:700;font-size:14px;padding:10px 24px;border-radius:8px;border:none;cursor:pointer;transition:background 0.15s ease;" onmouseover="this.style.background='#156325'" onmouseout="this.style.background='#1a7a2e'">Acceptera</button>
+    <button onclick="denyCookies()" style="background:transparent;color:#666;font-weight:600;font-size:14px;padding:10px 24px;border-radius:8px;border:1px solid #2a2a2a;cursor:pointer;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">Neka</button>
+    <button onclick="toggleSettings()" style="background:transparent;color:#666;font-weight:600;font-size:14px;padding:10px 24px;border-radius:8px;border:1px solid #2a2a2a;cursor:pointer;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#666'">Visa inställningar</button>
+  </div>
+  <div id="cookie-settings" style="display:none;margin-top:20px;border-top:1px solid #222;padding-top:20px;">
+    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px;">
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:14px;color:#888;">Nödvändiga funktioner</span><span style="font-size:12px;color:#444;font-weight:600;">Alltid aktiv</span></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:14px;color:#888;">Statistik och analys</span><input type="checkbox" id="stat-cookie" style="accent-color:#CC0A0A;width:16px;height:16px;" /></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;"><span style="font-size:14px;color:#888;">Marknadsföring</span><input type="checkbox" id="mkt-cookie" style="accent-color:#CC0A0A;width:16px;height:16px;" /></div>
+    </div>
+    <button onclick="saveSettings()" style="background:#CC0A0A;color:#fff;font-weight:700;font-size:14px;padding:10px 24px;border-radius:8px;border:none;cursor:pointer;">Spara inställningar</button>
+  </div>
+</div>
+<script>
+  if (localStorage.getItem('cookie_consent')) document.getElementById('cookie-banner').style.display = 'none';
+  function acceptCookies() { localStorage.setItem('cookie_consent','accepted'); document.getElementById('cookie-banner').style.display='none'; }
+  function denyCookies() { localStorage.setItem('cookie_consent','denied'); document.getElementById('cookie-banner').style.display='none'; }
+  function toggleSettings() { var s=document.getElementById('cookie-settings'); s.style.display=s.style.display==='none'?'block':'none'; }
+  function saveSettings() { localStorage.setItem('cookie_consent','custom'); document.getElementById('cookie-banner').style.display='none'; }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+/* =====================================================
+   MOBILE RESPONSIVE — skyltprogram.se
+   Applies to all pages. Linked from <head>.
+   ===================================================== */
+
+@media (max-width: 767px) {
+
+  /* === GRID LAYOUTS → single column === */
+  .col-2,
+  .col-3,
+  .col-4,
+  .col-contact {
+    grid-template-columns: 1fr !important;
+  }
+
+  .col-footer {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* === SECTION PADDING === */
+  .sec-pad {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* === HERO === */
+  .hero-section {
+    padding: 48px 20px 48px !important;
+  }
+
+  /* === BUTTONS === */
+  .btn-stack {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+  .btn-stack a,
+  .btn-stack button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* === NAV phone button === */
+  .nav-phone-text {
+    display: none !important;
+  }
+
+  /* === GALLERY === */
+  .col-gallery {
+    grid-template-columns: 1fr !important;
+  }
+  .col-gallery > div {
+    height: 280px !important;
+  }
+
+  /* === CONTACT grid === */
+  .col-contact > div:last-child {
+    margin-top: 0 !important;
+  }
+
+  /* === SOCIAL PROOF === */
+  .social-proof {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* === STATS CARDS === */
+  .col-stats {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* === MARQUEE shrink === */
+  #marquee-track span {
+    margin-right: 32px !important;
+  }
+
+  /* === COOKIE BANNER === */
+  #cookie-banner {
+    bottom: 0 !important;
+    border-radius: 16px 16px 0 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+
+  /* === GENERAL TEXT === */
+  body {
+    font-size: 15px;
+  }
+
+  /* === STEP connector hide === */
+  .step-connector {
+    display: none !important;
+  }
+
+  /* === CTA BANNER padding === */
+  .cta-banner {
+    padding: 56px 20px !important;
+  }
+
+  /* === FOOTER bottom row === */
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+
+  /* === BRANCH CARDS === */
+  .col-branch {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .col-footer {
+    grid-template-columns: 1fr !important;
+  }
+  .col-stats {
+    grid-template-columns: 1fr !important;
+  }
+}

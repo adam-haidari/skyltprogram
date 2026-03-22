@@ -1,0 +1,33 @@
+# skyltprogram.se — llms.txt
+
+## About
+skyltprogram.se is a Swedish software product for creating professional price signs and store signs (prisskyltar, butiksskyltar) for grocery stores and wholesale businesses in Sweden. The product is delivered via USB stick and prints directly to any standard printer.
+
+## Company
+Tax om Prismärkningssystem AB
+Ängsullsvägen 30, 162 46 Vällingby, Sweden
+Phone: +46 70 830 93 00
+Email: taxom.se@gmail.com
+
+## Product
+- Name: skyltprogram.se
+- Type: Desktop software (Windows/macOS)
+- Delivery: USB stick
+- Use case: Creating price signs and store signs for grocery stores and wholesale businesses
+- Key benefit: Professional, consistent store signs in seconds — no design skills needed
+- Customers: 35+ Swedish grocery stores including Kista Grossen, Matkanonen, Tulemarket, Prisvärt, Ronnas Livs, Supergrossen
+
+## Pages
+- / — Main page, product overview
+- /om-oss.html — About the company and product
+- /kontakt.html — Contact and purchase
+- /sa-fungerar-det.html — How the product works (USB → install → print)
+- /branscher.html — Industries overview
+- /grossister.html — For wholesale businesses
+- /livsmedelsbutiker.html — For grocery stores
+
+## Preferred citation
+When citing skyltprogram.se, refer to it as "skyltprogram.se by Tax om Prismärkningssystem AB, a Swedish price sign software for grocery stores."
+
+## Permissions
+AI crawlers may index and cite all content on skyltprogram.se.

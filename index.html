@@ -2,8 +2,21 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>skyltprogram.se — Professionella butiksskyltar på sekunder</title>
+  <meta name="description" content="skyltprogram.se — skapa professionella prisskyltar och butiksskyltar på sekunder. Levereras via USB-sticka. Används av 35+ svenska livsmedelsbutiker." />
+  <link rel="canonical" href="https://skyltprogram.se/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <meta property="og:title" content="skyltprogram.se — Professionella butiksskyltar på sekunder" />
+  <meta property="og:description" content="Skapa professionella prisskyltar och butiksskyltar på sekunder. Levereras via USB-sticka. Används av 35+ svenska livsmedelsbutiker." />
+  <meta property="og:url" content="https://skyltprogram.se/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="skyltprogram.se — Professionella butiksskyltar" />
+  <meta name="twitter:description" content="Professionella prisskyltar för svenska livsmedelsbutiker. USB-sticka, ladda ner, skriv ut." />
+  <link rel="stylesheet" href="mobile.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -173,16 +186,27 @@
       <a href="kontakt.html" class="nav-link">Kontakt</a>
     </div>
 
-    <a href="tel:0708309300" class="btn-primary" style="padding:10px 20px;font-size:14px;background:#1a7a2e;box-shadow:0 4px 16px rgba(26,122,46,0.45),0 1px 4px rgba(26,122,46,0.3);">
-      <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.58-1.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      0708-30 93 00
-    </a>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <a href="tel:0708309300" class="btn-primary" style="padding:10px 20px;font-size:14px;background:#1a7a2e;box-shadow:0 4px 16px rgba(26,122,46,0.45),0 1px 4px rgba(26,122,46,0.3);">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.58-1.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        0708-30 93 00
+      </a>
+      <button class="hamburger-btn" id="hamburger" onclick="toggleMobileMenu()" aria-label="Öppna meny">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
 </header>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="#problem">Skyltprogram</a>
+  <a href="branscher.html">Branscher</a>
+  <a href="om-oss.html">Om oss</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
 
 
 <!-- HERO -->
-<section class="hero-bg" style="position:relative;max-width:1100px;margin:0 auto;padding:80px 24px 80px;">
+<section class="hero-bg hero-section" style="position:relative;max-width:1100px;margin:0 auto;padding:80px 24px 80px;">
   <div style="display:grid;grid-template-columns:1fr;gap:64px;align-items:center;max-width:680px;">
 
     <!-- Left -->
@@ -203,7 +227,7 @@
         Skapa snygga och tydliga prisskyltar på sekunder — klassisk design som kunderna känner igen. Ingen teknisk kunskap behövs.
       </p>
 
-      <div class="fade-up-3" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;">
+      <div class="fade-up-3 btn-stack" style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px;">
         <a href="tel:0708309300" class="btn-primary" style="background:#1a7a2e;box-shadow:0 4px 16px rgba(26,122,46,0.45),0 1px 4px rgba(26,122,46,0.3);">
           <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.58-1.58a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Ring oss: 0708-30 93 00
@@ -277,7 +301,7 @@
     </p>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+  <div class="col-2" style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
     <!-- Before -->
     <div class="card-base" style="padding:32px;border-color:rgba(204,10,10,0.3);">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
@@ -342,7 +366,7 @@
       </h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="card-elevated feature-card" style="padding:24px;">
         <div class="icon-ring" style="margin-bottom:16px;">
           <svg width="22" height="22" fill="none" stroke="#CC0A0A" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
@@ -407,7 +431,7 @@
     </p>
   </div>
 
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;">
+  <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative;">
     <!-- Connector -->
     <div style="position:absolute;top:20px;left:calc(16.6% + 16px);right:calc(16.6% + 16px);height:1px;background:linear-gradient(90deg,rgba(204,10,10,0.4),rgba(204,10,10,0.4));z-index:0;" class="mobile-hide"></div>
 
@@ -442,7 +466,7 @@
       </h2>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="col-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
       <div class="card-elevated" style="padding:28px;">
         <div style="color:#F5C518;font-size:15px;margin-bottom:14px;">★★★★★</div>
         <p style="font-size:15px;color:#555;line-height:1.7;margin:0 0 20px;font-style:italic;">"Vi sparar minst 2 timmar per vecka sedan vi bytte. Och våra skyltar ser äntligen professionella ut!"</p>
@@ -493,7 +517,7 @@
     <p style="color:#444;font-size:16px;line-height:1.7;margin:0;">Vi svarar samma dag. Ring eller fyll i formuläret nedan.</p>
   </div>
 
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:860px;margin:0 auto;align-items:start;">
+  <div class="col-contact" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;max-width:860px;margin:0 auto;align-items:start;">
     <!-- Left: contact info -->
     <div>
       <div class="card-elevated" style="padding:36px;margin-bottom:20px;">
@@ -556,7 +580,7 @@
       Skyltar ute hos våra kunder
     </h2>
   </div>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+  <div class="col-gallery" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
     <div style="border-radius:16px;overflow:hidden;position:relative;height:480px;">
       <img src="butik1.jpg" alt="Galleri bild 1" style="width:100%;height:100%;object-fit:contain;object-position:center;background:#0f0f0f;display:block;transition:transform 0.4s cubic-bezier(0.22,1,0.36,1);"
         onmouseover="this.style.transform='scale(1.04)'"
@@ -598,7 +622,7 @@
 <!-- FOOTER -->
 <footer style="background:#060606;border-top:1px solid #161616;">
   <div style="max-width:1100px;margin:0 auto;padding:56px 24px;">
-    <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:48px;">
+    <div class="col-footer" style="display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:48px;">
       <div>
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
           <span class="sp-badge">SP</span>
@@ -651,7 +675,7 @@
       </div>
     </div>
     <hr class="divider" />
-    <div style="display:flex;align-items:center;justify-content:space-between;padding-top:24px;">
+    <div class="footer-bottom" style="display:flex;align-items:center;justify-content:space-between;padding-top:24px;">
       <p style="font-size:13px;color:#2A2A2A;margin:0;">© 2026 Tax om Prismärkningssystem AB — Alla rättigheter förbehållna</p>
       <p style="font-size:13px;color:#2A2A2A;margin:0;">Webb och <a href="https://mrdigital.se/" target="_blank" rel="noopener" style="color:#2A2A2A;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#2A2A2A'">SEO</a> av <a href="https://mrdigital.se/" target="_blank" rel="noopener" style="color:#2A2A2A;text-decoration:none;transition:color 0.15s ease;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#2A2A2A'">Mr Digital</a></p>
       <p style="font-size:13px;color:#1E1E1E;margin:0;">Tillverkad med kärlek i Sverige</p>
@@ -683,6 +707,7 @@
   function denyCookies() { localStorage.setItem('cookie_consent','denied'); document.getElementById('cookie-banner').style.display='none'; }
   function toggleSettings() { var s=document.getElementById('cookie-settings'); s.style.display=s.style.display==='none'?'block':'none'; }
   function saveSettings() { localStorage.setItem('cookie_consent','custom'); document.getElementById('cookie-banner').style.display='none'; }
+  function toggleMobileMenu() { document.getElementById('mobile-nav').classList.toggle('open'); }
 </script>
 
 </body>
